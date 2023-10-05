@@ -102,19 +102,11 @@ const productsInterface: InterfaceConfiguration = {
 		},
 		update: {
 			uri: "https://dummyjson.com/products/<<row.id>>",
-			http_method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			data_path: "products",
+			http_method: "PUT",
 		},
 		delete: {
 			uri: "https://dummyjson.com/products/<<row.id>>",
-			http_method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			data_path: "products",
+			http_method: "DELETE",
 		},
 	},
 	access: {
