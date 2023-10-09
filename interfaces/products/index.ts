@@ -74,19 +74,16 @@ const productsInterface: InterfaceConfiguration = {
 	},
 	requests: {
 		get: {
-			uri: "https://dummyjson.com/products/search",
+			uri: "https://dummyjson.com/products/category/<<parameters.category>>",
 			http_method: "GET",
 			data_path: "products",
 			parameters: {
-				q: {
+				category: {
 					schema: {
-						default_value: "laptop",
 						type: "string",
-						is_optional: true,
-					},
-					interface: {
-						form: {
-							label: "Search",
+						dynamic_enum: {
+							http_method: "GET",
+							uri: "https://dummyjson.com/products/categories",
 						},
 					},
 				},
@@ -111,7 +108,7 @@ const productsInterface: InterfaceConfiguration = {
 	},
 	access: {
 		privacy: "Public",
-		default_permissions: ["Read"],
+		default_permissions: ["All"],
 	},
 };
 
